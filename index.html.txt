@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Bonds - Digital Catalog</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #0b1f3a;
+}
+
+header {
+    background: #0b1f3a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.container {
+    padding: 15px;
+}
+
+.search {
+    margin: 15px 0;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin: 0 0 5px 0;
+}
+
+.card p {
+    font-size: 13px;
+    color: #555;
+}
+
+button {
+    background: #0b1f3a;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.product-page {
+    display: none;
+    padding: 15px;
+}
+
+.back {
+    background: none;
+    color: #0b1f3a;
+    border: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>National Bonds - Digital Catalog</h1>
+    <p style="margin:5px;font-size:12px;">Explore our savings products</p>
+</header>
+
+<div class="container" id="home">
+
+    <div class="search">
+        <input type="text" placeholder="Search products...">
+    </div>
+
+    <div class="card">
+        <h3>Savings Bonds</h3>
+        <p>Secure savings with potential rewards and capital protection.</p>
+        <button onclick="openPage('bonds')">View Details</button>
+    </div>
+
+    <div class="card">
+        <h3>Term Savings</h3>
+        <p>Fixed-term savings plan with structured returns.</p>
+        <button onclick="openPage('term')">View Details</button>
+    </div>
+
+    <div class="card">
+        <h3>Monthly Savings</h3>
+        <p>Save monthly and build financial discipline over time.</p>
+        <button onclick="openPage('monthly')">View Details</button>
+    </div>
+
+</div>
+
+<!-- PRODUCT PAGES -->
+
+<div class="product-page" id="bonds">
+    <button class="back" onclick="goBack()">← Back</button>
+    <h2>Savings Bonds</h2>
+    <p>Secure savings product designed to help customers grow wealth with stability.</p>
+
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Capital protection</li>
+        <li>Reward-based savings structure</li>
+        <li>Flexible participation</li>
+    </ul>
+
+    <button onclick="contact()">📞 Call Us / Visit Branch</button>
+</div>
+
+<div class="product-page" id="term">
+    <button class="back" onclick="goBack()">← Back</button>
+    <h2>Term Savings</h2>
+    <p>Fixed-term savings plan designed for disciplined financial growth.</p>
+
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Fixed duration options</li>
+        <li>Higher returns for locked savings</li>
+        <li>Secure investment structure</li>
+    </ul>
+
+    <button onclick="contact()">📞 Call Us / Visit Branch</button>
+</div>
+
+<div class="product-page" id="monthly">
+    <button class="back" onclick="goBack()">← Back</button>
+    <h2>Monthly Savings</h2>
+    <p>Start small and save consistently every month for long-term goals.</p>
+
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Flexible monthly deposits</li>
+        <li>Easy to start</li>
+        <li>Encourages financial discipline</li>
+    </ul>
+
+    <button onclick="contact()">📞 Call Us / Visit Branch</button>
+</div>
+
+<script>
+function openPage(page){
+    document.getElementById("home").style.display = "none";
+    document.getElementById(page).style.display = "block";
+}
+
+function goBack(){
+    document.getElementById("home").style.display = "block";
+    document.querySelectorAll(".product-page").forEach(p => p.style.display = "none");
+}
+
+function contact(){
+    alert("Please call your nearest National Bonds branch or visit in person.");
+}
+</script>
+
+</body>
+</html>
